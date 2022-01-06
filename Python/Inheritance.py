@@ -1,4 +1,4 @@
-class Vehicle:
+class Vehicle(object):
     def __init__(self, vehicle_type, no_of_wheels, no_of_doors, no_of_seats):
         self.vehicle_type = vehicle_type
         self.no_of_wheels = no_of_wheels
@@ -32,10 +32,20 @@ class Car(Vehicle):
     def is_car(self):
         return True
 
-# class Motor_Bike(Vehicle):
-#     def
 
+class MotorBike(Vehicle):
+    def __init__(self, brand):
+        self.brand = brand
+        self.no_of_wheels = 2
+        self.no_of_doors = 0
+        self.no_of_seats = 2
+        self.price = 0
+        self.vehicle_type = 'Motor Cycle'
 
+    def get_price(self):
+        self.price = car_brand_prices[self.brand]* 100
+        print("Price of this ", type(self).__name__, "is", self.price)
+        return self.price
 
 
 if __name__ == '__main__':
